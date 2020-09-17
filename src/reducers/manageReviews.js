@@ -6,8 +6,8 @@ export default (state = [], action) => {
     case "CREATE_REVIEW":
       const review = {
         id: cuid(),
-        text: action.payload.text,
-        restaurantId: action.payload.restaurantId,
+        text: action.review.text,
+        restaurantId: action.review.restaurantId,
       };
       return [...state, review];
     case "UPDATE_REVIEW":
