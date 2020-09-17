@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Review from './Review';
 
-class Reviews extends Component {
-  render() {
+const Reviews = props => {
+  
     return (
       <ul>
-        Reviews
+        {props.reviews.map(review => <Review key={review.id} review={review} delete={props.delete} /> )}
       </ul>
     );
-  }
+  
 };
 
 export default Reviews;
