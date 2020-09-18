@@ -8,9 +8,9 @@ export default function manageRestaurants(state = [], action){
                 id: cuid(),
                 text: action.payload
             }
-            return {...state, restaurants: [...state.restaurants, restaurant]}
+            return [...state, restaurant]
         case 'DELETE_RESTAURANT':
-            const restaurants = state.restaurants.filter(restaurant => restaurant.id !== action.id)
+            const restaurants = state.filter(restaurant => restaurant.id !== action.id)
             return { restaurants }
         default: 
             return state

@@ -8,11 +8,16 @@ class Reviews extends Component {
   }
 
   render() {
+    console.log(this.props.reviews)
+    const reviews = this.props.reviews.map(review => 
+      <Review handleDelete={() => this.handleDelete(review.id)} key={review.id} review={review}/>
+    )
     return (
       <ul>
-        {this.props.reviews.map(review => 
+        {/* {this.props.reviews.map(review => 
           <Review handleDelete={() => this.handleDelete(review.id)} key={review.id} review={review}/>
-        )}
+        )} */}
+        {reviews}
       </ul>
     );
   }

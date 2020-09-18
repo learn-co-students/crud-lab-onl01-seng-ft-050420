@@ -11,10 +11,11 @@ export default function manageReviews(state = [], action){
                 resturantId: action.payload.restaurantId
             }
             //return {...state, reviews: [...state.reviews, review]}
-            return {...state, review}
+            return [...state, review]
+
         case 'DELETE_REVIEW':
             console.log(action)
-            const reviews = state.reviews.filter(review => review.id !== action.id)
+            const reviews = state.filter(review => review.id !== action.id)
             return { reviews }
         default: 
             return state
