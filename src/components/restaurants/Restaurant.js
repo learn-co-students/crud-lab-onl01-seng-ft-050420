@@ -3,16 +3,20 @@ import ReviewsContainer from '../../containers/ReviewsContainer'
 
 class Restaurant extends Component {
   
+  handleOnClick = () => {
+    this.props.deleteRestaurant(this.props.restaurant.id)
+  }
 
   render() {
     
     const { restaurant } = this.props;
-
+  
     return (
-      <div id={restaurant.id} className='rest-id'>
+      <div>
         <li>
           {restaurant.text}
-          <button onClick={this.props.handleDelete}> X </button>
+          {/* <button onClick={this.props.handleDelete(restaurant.id)}> X </button> */}
+          <button onClick={this.handleOnClick}> X </button>
           <ReviewsContainer restaurant={restaurant}/>
         </li>
       </div>

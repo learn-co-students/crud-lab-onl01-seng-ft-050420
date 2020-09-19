@@ -2,17 +2,20 @@ import React, { Component } from 'react';
 import Restaurant from './Restaurant';
 
 class Restaurants extends Component {
-  handleDelete = (id) => {
-    this.props.deleteRestaurant(id)
-  }
-
+  
   render() {
-    console.log(this.props)
+
+    console.log(this.props.restaurants)
+    const restaurants = this.props.restaurants.map(restaurant =>{
+            return (<Restaurant deleteRestaurant={this.props.deleteRestaurant} key={restaurant.id} restaurant={restaurant}/>
+    )})
+    
     return(
       <ul>
-        {this.props.restaurants.map(restaurant => 
-          <Restaurant handleDelete={() => this.handleDelete(restaurant.id)} key={restaurant.id} restaurant={restaurant}/>
-        )}
+        {/* {this.props.restaurants.map(restaurant => 
+          <Restaurant deleteRestaurant={this.props.deleteRestaurant} key={restaurant.id} restaurant={restaurant}/>
+        )} */}
+        {restaurants}
       </ul>
     );
   }

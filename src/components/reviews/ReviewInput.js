@@ -3,24 +3,24 @@ import Reviews from './Reviews';
 
 class ReviewInput extends Component {
   state = {
-    text: ''
-    //restaurantId: ''
+    text: '',
+    restaurantId: ''
   }
 
   handleOnChange = (event) => { 
     //const restId = event.target.parentNode.parentNode.parentNode.parentNode.parentNode.id;
     this.setState({
-      text: event.target.value
-      //restaurantId: this.props.restaurant.id,
+      text: event.target.value,
+      restaurantId: this.props.restaurant.id
     })
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.addReview({text: this.state.text, restaurantId: this.props.restaurant.id})
+    this.props.addReview(this.state)
     this.setState({
-      text: ''
-      //restaurantId: ''
+      text: '',
+      restaurantId: ''
     })
   }
 

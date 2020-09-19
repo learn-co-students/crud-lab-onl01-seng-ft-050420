@@ -12,11 +12,10 @@ export default function manageReviews(state = [], action){
             }
             //return {...state, reviews: [...state.reviews, review]}
             return [...state, review]
-
         case 'DELETE_REVIEW':
-            console.log(action)
+            
             const reviews = state.filter(review => review.id !== action.id)
-            return { reviews }
+            return reviews
         default: 
             return state
     }

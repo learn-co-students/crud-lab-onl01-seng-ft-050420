@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import rootReducer from './reducers/index.js';
-
+//import rootReducer from './reducers/index.js';
+import manageRestaurant from './reducers/manageRestaurant'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 
-const store = createStore(rootReducer)
+const store = createStore(manageRestaurant)
 
 
 ReactDOM.render(
@@ -17,4 +17,4 @@ ReactDOM.render(
 document.getElementById('root')
 )
 
-console.log('in INDEX MAIN', rootReducer)
+

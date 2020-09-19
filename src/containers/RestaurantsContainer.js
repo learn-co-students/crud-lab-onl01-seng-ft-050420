@@ -27,6 +27,7 @@ const mapDispatchToProps = dispatch => {
 }
 
 const mapStateToProps = (state) => {
+  //debugger
   return {
     restaurants: state.restaurants
   }
