@@ -27,8 +27,8 @@ export default function manageRestaurants(state = {
   switch (action.type) {
 
     case 'ADD_RESTAURANT':
-
-      const restaurant = { text: action.payload, id: cuidFn() };
+      console.log(action)
+      const restaurant = { text: action.text, id: cuidFn() };
       return {
         ...state,
         restaurants: [ ...state.restaurants, restaurant]
@@ -41,11 +41,11 @@ export default function manageRestaurants(state = {
     case 'ADD_REVIEW':
       console.log(action)
       const review = { 
-        text: action.payload.text.toString(), 
-        restaurantId: action.payload.restaurantId, 
+        text: action.review.text, 
+        restaurantId: action.review.restaurantId, 
         id: cuidFn() 
       };
-
+      console.log(review)
       return { ...state,
         reviews: [...state.reviews, review]
       }
