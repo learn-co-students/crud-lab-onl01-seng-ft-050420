@@ -7,7 +7,7 @@ export function deleteRestaurant(id){
 }
 
 export function addReview(review) {
-    return { type: 'ADD_REVIEW', payload: review}
+    return { type: 'ADD_REVIEW', review: review}
 }
 
 export function deleteReview(id){

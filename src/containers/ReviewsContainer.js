@@ -8,7 +8,7 @@ class ReviewsContainer extends Component {
 
   restaurantReviews(){
     
-    return this.props.reviews.filter(review => review.restaurnatId === this.props.restaurant.id )
+    return this.props.reviews.filter(review => review.restaurantId === this.props.restaurant.id )
   }
 
   render() {

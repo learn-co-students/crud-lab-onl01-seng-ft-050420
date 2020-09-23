@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class ReviewInput extends Component {
   state = {
     text: '',
-    restaurantId: ''
+    
   }
 
   handleChange = event => {
@@ -12,6 +12,7 @@ class ReviewInput extends Component {
   }
   
   handleSubmit = event => {
+    console.log("test")
     event.preventDefault();
     this.props.addReview( {text: this.state.text, restaurantId: this.props.restaurantId} )
     this.setState({text: ''})
